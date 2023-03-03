@@ -1,0 +1,18 @@
+import random
+def sort_non_duplicate_rand_num():
+    
+    # Generate a list of 10 random numbers between 1 and 100
+    rand_num = [random.randint(1, 100) for _ in range(10)]
+    
+    # Remove duplicates from the list
+    non_duplicates = list(set(rand_num))
+    
+    # Sort the unique numbers in descending order using bubble sort
+    n = len(non_duplicates)
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if non_duplicates[j] < non_duplicates[j+1]:
+                non_duplicates[j], non_duplicates[j+1] = non_duplicates[j+1], non_duplicates[j]
+    
+    # Return the sorted unique numbers
+    return non_duplicates
